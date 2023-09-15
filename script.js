@@ -1,3 +1,9 @@
+const input = document.getElementById('input');
+const sequenceDisplay = document.querySelector('.sequence');
+const form = document.querySelector('form');
+const error = document.querySelector('.error');
+let num;
+
 function fibs(n){
     let prevNum = 1;
     let prevNum2 = 0;
@@ -11,20 +17,46 @@ function fibs(n){
     return prevNum2;
 }
 
-function fibsRec(n){
-    if(n < 2){
-        return n;
+function fibsRec(num){
+    if(num < 2){
+        return num;
     }else{
-        return fibsRec(n-1) + fibsRec(n-2);
+        return fibsRec(num-1) + fibsRec(num-2);
     }
 }
 
-let n = prompt('How many terms of the Fibonacci sequence would you like to see? : ');
-while(n<0){
-    n = prompt('Dude... Come on... Pick a positive number...');
+form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    num = input.value;
+    sequenceDisplay.textContent = 'Fibonacci Sequence: ';
+    displaySequence(num);
+})
+
+form.addEventListener("keyup", (e)=>{
+    if(input.value < 1){
+        showError();
+    }else if(input.value > 40){
+        showError();
+    }else{
+        error.style.display = 'none';
+        return;
+    }
+})
+
+function displaySequence(num){
+    sequenceDisplay.style.display = 'block';
+    for (let i = 0; i < num; i++) {
+        sequenceDisplay.textContent += `${fibsRec(i)}, `;
+    }
+
 }
 
-for (let i = 0; i < n; i++) {
-    console.log(fibsRec(i));
-};
-
+function showError(){
+    error.style.display = 'block';
+    if(input.value < 1){
+        error.textContent = 'Dude... Come on... Enter a positive number...';
+    }else{
+        error.textContent = "Ay yo! Chill! My computer can't count that big... Try a smaller number";
+    }
+    
+}

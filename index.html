@@ -4,16 +4,28 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Fibonacci Sequence</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     </head>
     <body>
-        <header></header>
+        <header><h1>Fibonacci Sequence</h1></header>
         <main>
             <div class="container">
-                <div class="diagram"></div>
-                <div class="total"></div>
+                <div class="input">
+                    <form action="">
+                        <input type="number" id="input" placeholder="How many terms of the Fibonacci Sequence would you like to see?" autocomplete="off"/>
+                    </form>
+                </div>
+                <div class="sequence">Fibonacci Sequence: </div>
+                <div class="error"></div>
             </div>
         </main>
-        <footer></footer>
+        <footer>
+            Copyright ©
+            <script>document.write(new Date().getFullYear())</script>
+            memewei
+            <a href="https://github.com/memewei"><i class="uil uil-github"></i></a>
+        </footer>
         <script src="script.js"></script>
     </body>
 </html>

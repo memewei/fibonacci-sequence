@@ -1,0 +1,59 @@
+:root{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    display: grid;
+    grid-template-rows: 10vh 80vh 10vh;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#input{
+    width: 500px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.sequence{
+    display: none;
+    padding-top: 10px;
+}
+
+.error{
+    padding-top: 10px;
+    color: red;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+i{
+    color: black;
+}
